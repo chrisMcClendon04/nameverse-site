@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Username Generator | NameVerse</title>
+  <meta name="description" content="Generate cool, catchy usernames for social media, games, and more with our Username Generator." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="mainHeader">
+    <div class="logo">🌌 NameVerse</div>
+    <nav class="navbar">
+      <div class="menu-toggle" id="menuToggle">&#9776;</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog-home.html">Blog</a></li>
+        <li><a href="generators.html">Generators</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy</a></li>
+      </ul>
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+    </nav>
+  </header>
+
+  <main class="generator-box">
+    <h1>👤 Username Generator</h1>
+    <p class="subhead">Find the perfect handle for TikTok, Instagram, gaming, or any online platform.</p>
+    <button onclick="generateUsername()">Generate Username</button>
+    <div id="usernameBox" class="name-output"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 NameVerse. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const usernames = [
+      "PixelNomad", "GlowDrip", "VibeRush", "CyberMuse", "DriftByte",
+      "MoodSynth", "EchoTide", "LoopWraith", "NovaSway", "SnapAura"
+    ];
+
+    function generateUsername() {
+      const randomIndex = Math.floor(Math.random() * usernames.length);
+      document.getElementById("usernameBox").innerText = usernames[randomIndex];
+    }
+
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      body.classList.add('light');
+      themeToggle.textContent = '🌞';
+    }
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light');
+      const newTheme = body.classList.contains('light') ? 'light' : 'dark';
+      localStorage.setItem('theme', newTheme);
+      themeToggle.textContent = newTheme === 'light' ? '🌞' : '🌙';
+    });
+
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('mainHeader');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

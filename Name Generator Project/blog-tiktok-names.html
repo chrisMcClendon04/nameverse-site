@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 10 Trendy TikTok Username Ideas</title>
+  <meta name="description" content="Explore the top 10 trendy TikTok username ideas to grow your brand and boost your visibility on social media.">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="mainHeader">
+  <div class="logo">🌌 NameVerse</div>
+  <nav class="navbar">
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog-home.html">Blog</a></li>
+      <li><a href="generators.html">Generators</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy-policy.html">Privacy</a></li>
+    </ul>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </nav>
+</header>
+  <main class="blog-post">
+    <h1>Top 10 Trendy TikTok Username Ideas</h1>
+    <p class="post-date">Published June 2025</p>
+    <p>Your TikTok username is your brand. The right handle helps you stand out and get noticed. Here are our top 10 ideas:</p>
+    <ol>
+      <li><strong>GlowNova</strong> – Sleek and futuristic.</li>
+      <li><strong>LoopMuse</strong> – For music remixers.</li>
+      <li><strong>VibeRiot</strong> – High-energy and bold.</li>
+      <li><strong>NovaFlick</strong> – Trend-focused creators.</li>
+      <li><strong>SnappyPixie</strong> – Fun and cute.</li>
+      <li><strong>ReelRush</strong> – Quick-edit videos.</li>
+      <li><strong>DailyDoseOfYou</strong> – Personal vlog vibes.</li>
+      <li><strong>ZoomSpice</strong> – Energy + flavor.</li>
+      <li><strong>DripMoods</strong> – Fashion + feels.</li>
+      <li><strong>Trendina</strong> – Feels like a brand!</li>
+    </ol>
+    <h2>How to Make Your Own Username</h2>
+    <ul>
+      <li>Use trendy words combined with your personality.</li>
+      <li>Keep it short, memorable, and unique.</li>
+      <li>Avoid numbers unless necessary.</li>
+    </ul>
+    <p>Still stuck? Use our <a href="index.html">name generator</a> to get inspired!</p>
+  </main>
+  <footer>
+    <p>&copy; 2025 NameVerse. All rights reserved.</p>
+  </footer>
+  <script>
+  // Theme toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    body.classList.add('light');
+    themeToggle.textContent = '🌞';
+  }
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    const newTheme = body.classList.contains('light') ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme);
+    themeToggle.textContent = newTheme === 'light' ? '🌞' : '🌙';
+  });
+
+  // Mobile menu toggle
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('active');
+  });
+
+  // Header background on scroll
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('mainHeader');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+</body>
+</html>
