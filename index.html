@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Name Generator | NameVerse</title>
+  <meta name="description" content="Generate aesthetic, fantasy, or gamer names instantly with NameVerse. Great for usernames, character names, or business ideas." />
+  <meta name="keywords" content="random name generator, aesthetic usernames, fantasy names, gamer tags, cool aliases" />
+  <meta name="author" content="NameVerse" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header id="mainHeader">
+  <div class="logo">🌌 NameVerse</div>
+  
+  <nav class="navbar">
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog-home.html">Blog</a></li>
+      <li><a href="generators.html">Generators</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy-policy.html">Privacy</a></li>
+    </ul>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </nav>
+
+</header>
+
+  <main>
+    <h1>Random Name Generator</h1>
+    <p class="subhead">Create aesthetic, fantasy, or gamer-style names instantly. Great for TikTok, gaming, or character inspiration.</p>
+
+    <section class="generator-box">
+      <label for="categorySelect">Choose a category:</label>
+      <select id="categorySelect" onchange="generateName()">
+        <option value="aesthetic">Aesthetic</option>
+        <option value="gamer">Gamer</option>
+        <option value="fantasy">Fantasy</option>
+      </select>
+
+      <div id="nameBox">Your generated name will appear here</div>
+
+      <button onclick="generateName()">Generate Name</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 NameVerse. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const names = {
+      aesthetic: [
+        "Luna Bloom", "Echo Ray", "Velvet Frost", "Nova Drift", "Iris Noir",
+        "Sage Haze", "Cleo Muse", "Violet Vibe", "Indigo Dream", "Moon Fade"
+      ],
+      gamer: [
+        "KillSwitch77", "GhostTactic", "BlazeSniper", "PixelRage", "StealthWolf",
+        "ZeroScope", "TriggerBotX", "CyberVenom", "TwitchRush", "NoobHunter"
+      ],
+      fantasy: [
+        "Thalor Brightblade", "Elyra Moonshadow", "Krag the Red", "Zenthra of Dusk",
+        "Morrik Stonehelm", "Aluna Frostsong", "Velgorn the Wise", "Nymera Darkveil",
+        "Tarn Blackroot", "Zephira Skyborn"
+      ]
+    };
+
+    function generateName() {
+      const category = document.getElementById("categorySelect").value;
+      const nameList = names[category];
+      const randomIndex = Math.floor(Math.random() * nameList.length);
+      document.getElementById("nameBox").innerText = nameList[randomIndex];
+    }
+  </script>
+
+  <script>
+  // Theme toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    body.classList.add('light');
+    themeToggle.textContent = '🌞';
+  }
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    const newTheme = body.classList.contains('light') ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme);
+    themeToggle.textContent = newTheme === 'light' ? '🌞' : '🌙';
+  });
+
+  // Mobile menu toggle
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('active');
+  });
+
+  // Header background on scroll
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('mainHeader');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>

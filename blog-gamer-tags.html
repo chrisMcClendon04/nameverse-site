@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>15 Powerful Gamer Tags That Stand Out</title>
+  <meta name="description" content="Find 15 powerful and creative gamer tags that will help you stand out in any online game or platform.">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <header id="mainHeader">
+  <div class="logo">🌌 NameVerse</div>
+  <nav class="navbar">
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog-home.html">Blog</a></li>
+      <li><a href="generators.html">Generators</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy-policy.html">Privacy</a></li>
+    </ul>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </nav>
+</header>
+  <main class="blog-post">
+    <h1>15 Powerful Gamer Tags That Stand Out</h1>
+    <p class="post-date">Published June 2025</p>
+    <p>Whether you're on Xbox, PS5, or PC, your gamer tag is your digital identity. Here are 15 bold and unforgettable ideas:</p>
+    <ol>
+      <li><strong>ShadowFang</strong></li>
+      <li><strong>CrimsonBolt</strong></li>
+      <li><strong>PixelGhost</strong></li>
+      <li><strong>BlazeStrike</strong></li>
+      <li><strong>NovaKnight</strong></li>
+      <li><strong>GrimZeta</strong></li>
+      <li><strong>Darklynx</strong></li>
+      <li><strong>WraithCraft</strong></li>
+      <li><strong>DoomGlider</strong></li>
+      <li><strong>ThornHex</strong></li>
+      <li><strong>AceFury</strong></li>
+      <li><strong>QuasarRift</strong></li>
+      <li><strong>Hellstream</strong></li>
+      <li><strong>IronPulse</strong></li>
+      <li><strong>ReignCode</strong></li>
+    </ol>
+    <h2>Make Your Own Epic Name</h2>
+    <ul>
+      <li>Use mythology, sci-fi, and strong verbs.</li>
+      <li>Make it sound memorable and cool when said out loud.</li>
+      <li>Check that it’s not already taken on your platform.</li>
+    </ul>
+    <p>Still undecided? Use our <a href="index.html">name generator</a> to spark ideas!</p>
+  </main>
+  <footer>
+    <p>&copy; 2025 NameVerse. All rights reserved.</p>
+  </footer>
+ <script>
+  // Theme toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    body.classList.add('light');
+    themeToggle.textContent = '🌞';
+  }
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    const newTheme = body.classList.contains('light') ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme);
+    themeToggle.textContent = newTheme === 'light' ? '🌞' : '🌙';
+  });
+
+  // Mobile menu toggle
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('active');
+  });
+
+  // Header background on scroll
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('mainHeader');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | NameVerse</title>
+  <meta name="description" content="Contact the NameVerse team. We'd love to hear your feedback, questions, or partnership inquiries!">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="mainHeader">
+  <div class="logo">🌌 NameVerse</div>
+  <nav class="navbar">
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog-home.html">Blog</a></li>
+      <li><a href="generators.html">Generators</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy-policy.html">Privacy</a></li>
+    </ul>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </nav>
+</header>
+
+  <main class="contact-form">
+    <h1>Contact Us</h1>
+    <p>Got feedback, ideas, or a business inquiry? We’d love to hear from you!</p>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 NameVerse. All rights reserved.</p>
+  </footer>
+
+  <script>
+  // Theme toggle
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    body.classList.add('light');
+    themeToggle.textContent = '🌞';
+  }
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    const newTheme = body.classList.contains('light') ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme);
+    themeToggle.textContent = newTheme === 'light' ? '🌞' : '🌙';
+  });
+
+  // Mobile menu toggle
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('active');
+  });
+
+  // Header background on scroll
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('mainHeader');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>
